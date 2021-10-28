@@ -1,0 +1,102 @@
+AE1 = -(q*c12[t]*R0[t]^(-3 + q)*Sqrt[\[Xi][t]]*
+       (c12[t]*(2*R0[t]^2 + (-1 + q)*r0[t]*((-2 + q)*R12[t]^2 + 
+            R0[t]*(2*R1[t] - h12[t]*R12[t])))*Sqrt[\[Xi][t]] + 
+        (-1 + q)*r0[t]^2*R0[t]*Derivative[1][R0][t]))/(4*r0[t]^3)
+ 
+Attributes[Derivative] = {NHoldAll}
+ 
+AE12 = (R0[t]^(-4 + q)*((R0[t]^2*(-2*q*c12[t]^3*(-(h12[t]^3*r0[t]*R0[t]) + 
+            3*h12[t]*(2 - 3*h1[t]*r0[t])*R0[t] - 6*(h32[t]*r0[t]*R0[t] + 
+              R12[t] - q*R12[t]))*\[Xi][t] - 6*q*(-1 + c1[t])*r0[t]*R0[t]*
+           Sqrt[\[Xi][t]]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 
+            2*r0[t]*Derivative[1][c12][t]) - 3*q*c12[t]*r0[t]*R0[t]*
+           Sqrt[\[Xi][t]]*(4*(-1 + c1[t])*c32[t]*Sqrt[\[Xi][t]] + 
+            2*r0[t]*Derivative[1][c1][t] - h12[t]*((-1 + c1[t])^2*Sqrt[
+                \[Xi][t]] - 2*r0[t]*Derivative[1][c12][t])) - 
+          6*c12[t]^2*R0[t]*((3*q + 2*q*c2[t]*r0[t] - 2*q*h1[t]*r0[t] + 
+              q*c32[t]*h12[t]*r0[t] - q*h12[t]^2*r0[t] + q*c1[t]*(-3 + 
+                2*h1[t]*r0[t] + h12[t]^2*r0[t]) - 2*r0[t]^2*R0[t])*\[Xi][t] + 
+            q*r0[t]^2*Sqrt[\[Xi][t]]*Derivative[1][h12][t])))/c12[t] + 
+       6*(-1 + q)*q*R0[t]*Sqrt[\[Xi][t]]*
+        (-2*c12[t]^2*((1 + h1[t]*r0[t])*R0[t]*R12[t] + h12[t]*r0[t]*
+            (2*R0[t]*R1[t] + (-2 + q)*R12[t]^2))*Sqrt[\[Xi][t]] + 
+         (-1 + c1[t])*r0[t]*R0[t]*((-1 + c1[t])*R12[t]*Sqrt[\[Xi][t]] + 
+           2*r0[t]*Derivative[1][R0][t]) + 2*c12[t]*r0[t]*
+          ((-2 + q)*R12[t]*((-1 + c1[t])*R12[t]*Sqrt[\[Xi][t]] + 
+             2*r0[t]*Derivative[1][R0][t]) + R0[t]*(2*(-1 + c1[t])*R1[t]*
+              Sqrt[\[Xi][t]] + c32[t]*R12[t]*Sqrt[\[Xi][t]] - 
+             h12[t]*r0[t]*Derivative[1][R0][t] + 2*r0[t]*Derivative[1][R12][
+               t]))) - 3*(-1 + q)*q*Sqrt[\[Xi][t]]*
+        (-2*c12[t]^2*(h12[t]^2*r0[t]*R0[t]^2*R12[t] - 6*(-2 + q)*r0[t]*R0[t]*
+            R1[t]*R12[t] - (6 - 5*q + q^2)*r0[t]*R12[t]^3 + 
+           h12[t]*r0[t]*R0[t]*(2*R0[t]*R1[t] + (-2 + q)*R12[t]^2) + 
+           R0[t]^2*((-2 + 3*h1[t]*r0[t])*R12[t] - 6*r0[t]*R32[t]))*
+          Sqrt[\[Xi][t]] + r0[t]*R0[t]^2*
+          (R12[t]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] + 2*r0[t]*Derivative[1][c12][
+               t]) + 2*(-1 + c1[t])*r0[t]*Derivative[1][R0][t]) + 
+         2*c12[t]*r0[t]*R0[t]*(c32[t]*R0[t]*R12[t]*Sqrt[\[Xi][t]] + 
+           h12[t]*R0[t]*((-1 + c1[t])*R12[t]*Sqrt[\[Xi][t]] - 
+             2*r0[t]*Derivative[1][R0][t]) + 5*r0[t]*
+            ((-2 + q)*R12[t]*Derivative[1][R0][t] + R0[t]*Derivative[1][R12][
+               t])))))/(24*r0[t]^3)
+ 
+h1[t_, r_] := h12[t]*Sqrt[r - r0[t]] + h1[t]*(r - r0[t]) + 
+     h32[t]*(r - r0[t])^(3/2)
+ 
+OE12 = -(q*c12[t]*R0[t]^(-3 + q)*(c12[t]*(2*R0[t]^2 + (2 - 3*q + q^2)*r0[t]*
+           R12[t]^2 + (-1 + q)*r0[t]*R0[t]*(2*R1[t] - h12[t]*R12[t]))*
+         Sqrt[\[Xi][t]] + (-1 + q)*r0[t]^2*R0[t]*Derivative[1][R0][t]))/
+     (4*r0[t]^3)
+ 
+oe0 = (q*R0[t]^(-4 + q)*(-2*c12[t]*R0[t]^2*(-2*(-1 + c1[t])*R0[t] + 
+         (-1 + q)*c12[t]*R12[t])*Sqrt[\[Xi][t]] - 
+       (-1 + q)*(c12[t]^2*(6*(-2 + q)*r0[t]*R0[t]*R1[t]*R12[t] + 
+           (6 - 5*q + q^2)*r0[t]*R12[t]^3 - h12[t]*r0[t]*R0[t]*
+            (2*R0[t]*R1[t] + (-2 + q)*R12[t]^2) + 
+           R0[t]^2*(R12[t] - 2*h1[t]*r0[t]*R12[t] + 6*r0[t]*R32[t]))*
+          Sqrt[\[Xi][t]] + r0[t]^2*R0[t]^2*R12[t]*Derivative[1][c12][t] + 
+         c12[t]*r0[t]*R0[t]*(-((-2 + q)*R12[t]*((-1 + c1[t])*R12[t]*Sqrt[
+                \[Xi][t]] - 3*r0[t]*Derivative[1][R0][t])) + 
+           R0[t]*(-2*(-1 + c1[t])*R1[t]*Sqrt[\[Xi][t]] + 
+             h12[t]*((-1 + c1[t])*R12[t]*Sqrt[\[Xi][t]] - 2*r0[t]*
+                Derivative[1][R0][t]) + 3*r0[t]*Derivative[1][R12][t])))))/
+     (4*r0[t]^3)
+ 
+o0 = -(q*c12[t]*R0[t]^(-3 + q)*(c12[t]*(2*R0[t]^2 + (2 - 3*q + q^2)*r0[t]*
+           R12[t]^2 + (-1 + q)*r0[t]*R0[t]*(2*R1[t] - h12[t]*R12[t]))*
+         Sqrt[\[Xi][t]] + (-1 + q)*r0[t]^2*R0[t]*Derivative[1][R0][t]))/
+     (4*r0[t]^3*Sqrt[\[Xi][t]])
+ 
+o12 = (R0[t]^(-4 + q)*((R0[t]^2*(-2*q*c12[t]^3*(h12[t]^3*r0[t]*R0[t] + 
+            6*h32[t]*r0[t]*R0[t] + 3*h12[t]*(-2 + 3*h1[t]*r0[t])*R0[t] + 
+            6*(-1 + q)*R12[t])*Sqrt[\[Xi][t]] + 6*q*(-1 + c1[t])*r0[t]*R0[t]*
+           ((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 2*r0[t]*Derivative[1][c12][t]) + 
+          3*q*c12[t]*r0[t]*R0[t]*(4*(-1 + c1[t])*c32[t]*Sqrt[\[Xi][t]] + 
+            2*r0[t]*Derivative[1][c1][t] - h12[t]*((-1 + c1[t])^2*Sqrt[
+                \[Xi][t]] - 2*r0[t]*Derivative[1][c12][t])) + 
+          6*c12[t]^2*R0[t]*((-5*q + 2*q*c2[t]*r0[t] - 2*q*h1[t]*r0[t] + 
+              q*c32[t]*h12[t]*r0[t] - q*h12[t]^2*r0[t] + q*c1[t]*(5 + 
+                2*h1[t]*r0[t] + h12[t]^2*r0[t]) - 2*r0[t]^2*R0[t])*
+             Sqrt[\[Xi][t]] + q*r0[t]^2*Derivative[1][h12][t])))/c12[t] + 
+       6*(-1 + q)*q*R0[t]*(2*c12[t]^2*((1 + h1[t]*r0[t])*R0[t]*R12[t] + 
+           h12[t]*r0[t]*(2*R0[t]*R1[t] + (-2 + q)*R12[t]^2))*Sqrt[\[Xi][t]] - 
+         (-1 + c1[t])*r0[t]*R0[t]*((-1 + c1[t])*R12[t]*Sqrt[\[Xi][t]] + 
+           2*r0[t]*Derivative[1][R0][t]) + 2*c12[t]*r0[t]*
+          (-((-2 + q)*R12[t]*((-1 + c1[t])*R12[t]*Sqrt[\[Xi][t]] + 
+              2*r0[t]*Derivative[1][R0][t])) + 
+           R0[t]*(-2*(-1 + c1[t])*R1[t]*Sqrt[\[Xi][t]] - c32[t]*R12[t]*
+              Sqrt[\[Xi][t]] + h12[t]*r0[t]*Derivative[1][R0][t] - 
+             2*r0[t]*Derivative[1][R12][t]))) - 3*(-1 + q)*q*r0[t]*
+        (2*c12[t]^2*(-(h1[t]*R0[t]^2*R12[t]) + h12[t]^2*R0[t]^2*R12[t] - 
+           12*R0[t]*R1[t]*R12[t] + 6*q*R0[t]*R1[t]*R12[t] + 6*R12[t]^3 - 
+           5*q*R12[t]^3 + q^2*R12[t]^3 - h12[t]*R0[t]*(2*R0[t]*R1[t] + 
+             (-2 + q)*R12[t]^2) + 6*R0[t]^2*R32[t])*Sqrt[\[Xi][t]] - 
+         R0[t]^2*(R12[t]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 
+             2*r0[t]*Derivative[1][c12][t]) + 2*(-1 + c1[t])*r0[t]*
+            Derivative[1][R0][t]) - 2*c12[t]*R0[t]*
+          ((-2 + q)*R12[t]*(2*(-1 + c1[t])*R12[t]*Sqrt[\[Xi][t]] - 
+             r0[t]*Derivative[1][R0][t]) + R0[t]*(4*(-1 + c1[t])*R1[t]*
+              Sqrt[\[Xi][t]] + c32[t]*R12[t]*Sqrt[\[Xi][t]] + 
+             h12[t]*R12[t]*Sqrt[\[Xi][t]] - c1[t]*h12[t]*R12[t]*
+              Sqrt[\[Xi][t]] + 2*h12[t]*r0[t]*Derivative[1][R0][t] - 
+             r0[t]*Derivative[1][R12][t])))))/(24*r0[t]^3*Sqrt[\[Xi][t]])

@@ -1,0 +1,483 @@
+AE1 = (2*\[Alpha]*c12[t]^3*(h12[t]^3*r0[t] - 12*h32[t]*r0[t] + 
+        3*h12[t]*(-4 + 5*h1[t]*r0[t]))*\[Xi][t] - 6*\[Alpha]*(-1 + c1[t])*
+       r0[t]*Sqrt[\[Xi][t]]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 
+        2*r0[t]*Derivative[1][c12][t]) + 6*c12[t]^2*
+       ((5*\[Alpha] + 4*\[Alpha]*c2[t]*r0[t] - 2*\[Alpha]*h1[t]*r0[t] - 
+          \[Alpha]*c32[t]*h12[t]*r0[t] + 2*\[Alpha]*h12[t]^2*r0[t] + 
+          \[Alpha]*c1[t]*(-9 + 2*h1[t]*r0[t] - 2*h12[t]^2*r0[t]) - 
+          4*\[Beta]*r0[t]^2*R0[t] - 2*\[Alpha]*r0[t]^3*R1[t] - 
+          4*\[Beta]*r0[t]^3*R1[t] + \[Alpha]*h12[t]*r0[t]^3*R12[t] + 
+          2*\[Beta]*h12[t]*r0[t]^3*R12[t])*\[Xi][t] - 2*\[Alpha]*r0[t]^2*
+         Sqrt[\[Xi][t]]*Derivative[1][h12][t]) - 3*c12[t]*r0[t]*
+       Sqrt[\[Xi][t]]*(4*\[Alpha]*(-1 + c1[t])*c32[t]*Sqrt[\[Xi][t]] - 
+        \[Alpha]*h12[t]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 
+          4*r0[t]*Derivative[1][c12][t]) + 2*(\[Alpha] + 2*\[Beta])*r0[t]^3*
+         Derivative[1][R0][t]))/(24*r0[t]^5)
+ 
+h1[t_, r_] := h12[t]*Sqrt[r - r0[t]] + h1[t]*(r - r0[t]) + 
+     h32[t]*(r - r0[t])^(3/2)
+ 
+Attributes[Derivative] = {NHoldAll}
+ 
+AE12 = (4*\[Alpha]*c12[t]^6*(-1350*h12[t]^2*r0[t] - 30*h12[t]^4*r0[t]^2 + 
+        360*h12[t]*h32[t]*r0[t]^2 + 360*h1[t]^3*r0[t]^3 - 
+        17*h12[t]^6*r0[t]^3 - 240*h12[t]^3*h32[t]*r0[t]^3 + 
+        45*h1[t]^2*r0[t]^2*(20 - 13*h12[t]^2*r0[t]) + 
+        30*h1[t]*r0[t]*(-66 + 51*h12[t]^2*r0[t] + h12[t]^4*r0[t]^2 + 
+          78*h12[t]*h32[t]*r0[t]^2) - 180*(10 + h32[t]^2*r0[t]^3))*
+       \[Xi][t]^(7/2) + 360*\[Alpha]*r0[t]^3*\[Xi][t]^2*
+       (13*(-1 + c1[t])^2*Sqrt[\[Xi][t]] - 6*r0[t]*Derivative[1][c12][t])*
+       ((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 2*r0[t]*Derivative[1][c12][t])^2 + 
+      24*c12[t]^5*r0[t]*\[Xi][t]^3*(7*\[Alpha]*(-1 + c1[t])*h12[t]^5*r0[t]^2*
+         Sqrt[\[Xi][t]] - 5*\[Alpha]*c32[t]*(114 + 3*h12[t]^2*r0[t] + 
+          24*h1[t]^2*r0[t]^2 - 7*h12[t]^4*r0[t]^2 + 66*h12[t]*h32[t]*
+           r0[t]^2 + 3*h1[t]*r0[t]*(-12 + 13*h12[t]^2*r0[t]))*
+         Sqrt[\[Xi][t]] + 15*h12[t]^2*r0[t]^2*(-8*\[Alpha]*(-1 + c1[t])*
+           h32[t]*Sqrt[\[Xi][t]] + r0[t]*(2*(\[Alpha] + 2*\[Beta])*R12[t]*
+             Sqrt[\[Xi][t]] + 7*\[Alpha]*Derivative[1][h1][t])) - 
+        5*h12[t]^3*r0[t]*((-15*\[Alpha] + 28*\[Alpha]*c2[t]*r0[t] + 
+            7*\[Alpha]*h1[t]*r0[t] + \[Alpha]*c1[t]*(15 - 7*h1[t]*r0[t]) - 
+            4*\[Beta]*r0[t]^2*R0[t])*Sqrt[\[Xi][t]] + 8*\[Alpha]*r0[t]^2*
+           Derivative[1][h12][t]) - 15*r0[t]*
+         (r0[t]*(2*(3*(\[Alpha] + 4*\[Beta]) - 2*(\[Alpha] + \[Beta])*h1[
+                t]*r0[t])*R12[t]*Sqrt[\[Xi][t]] + 11*\[Alpha]*
+             Derivative[1][h1][t] + r0[t]*(12*(\[Alpha] + 2*\[Beta])*R32[
+                t]*Sqrt[\[Xi][t]] + 17*\[Alpha]*h1[t]*Derivative[1][h1][
+                t])) + 2*h32[t]*((21*\[Alpha] - 2*\[Alpha]*c2[t]*r0[t] - 
+              14*\[Alpha]*h1[t]*r0[t] + 7*\[Alpha]*c1[t]*(-3 + 2*h1[t]*
+                 r0[t]) - 4*\[Beta]*r0[t]^2*R0[t])*Sqrt[\[Xi][t]] + 
+            5*\[Alpha]*r0[t]^2*Derivative[1][h12][t])) - 
+        15*h12[t]*((22*\[Alpha] - 29*\[Alpha]*h1[t]*r0[t] - 
+            4*\[Alpha]*h1[t]^2*r0[t]^2 + 2*\[Alpha]*c2[t]*r0[t]*
+             (2 + h1[t]*r0[t]) + \[Alpha]*c1[t]*(-14 + 29*h1[t]*r0[t] + 
+              4*h1[t]^2*r0[t]^2) + 8*\[Beta]*r0[t]^2*R0[t] - 
+            12*\[Beta]*h1[t]*r0[t]^3*R0[t] + 8*\[Beta]*r0[t]^3*R1[t])*
+           Sqrt[\[Xi][t]] - 2*\[Alpha]*r0[t]^2*((1 + 6*h1[t]*r0[t])*
+             Derivative[1][h12][t] - 6*r0[t]*Derivative[1][h32][t]))) + 
+      180*\[Alpha]*c12[t]*r0[t]^3*\[Xi][t]*
+       (c32[t]*\[Xi][t]^(3/2)*(107*(-1 + c1[t])^4*\[Xi][t] - 
+          193*(-1 + c1[t])^2*r0[t]*Sqrt[\[Xi][t]]*Derivative[1][c12][t] + 
+          48*r0[t]^2*Derivative[1][c12][t]^2) - (-1 + c1[t])*h12[t]*
+         \[Xi][t]^(3/2)*(56*(-1 + c1[t])^4*\[Xi][t] - 179*(-1 + c1[t])^2*
+           r0[t]*Sqrt[\[Xi][t]]*Derivative[1][c12][t] + 
+          134*r0[t]^2*Derivative[1][c12][t]^2) + 
+        r0[t]*(118*(-1 + c1[t])^3*\[Xi][t]^2*Derivative[1][c1][t] + 
+          27*(-1 + c1[t])^2*r0[t]*Sqrt[\[Xi][t]]*Derivative[1][c12][t]*
+           Derivative[1][xi][t] - 24*r0[t]^2*Derivative[1][c12][t]^2*
+           Derivative[1][xi][t] + 48*r0[t]^2*\[Xi][t]*Derivative[1][c12][t]*
+           Derivative[2][c12][t] - 2*(-1 + c1[t])*r0[t]*\[Xi][t]^(3/2)*
+           (73*Derivative[1][c1][t]*Derivative[1][c12][t] + 
+            27*(-1 + c1[t])*Derivative[2][c12][t]))) + 
+      60*c12[t]^4*r0[t]*\[Xi][t]^(3/2)*
+       ((87*\[Alpha] - 18*\[Alpha]*h1[t]*r0[t] + 75*\[Alpha]*h12[t]^2*r0[t] - 
+          12*\[Alpha]*c2[t]^2*r0[t]^2 + 12*\[Alpha]*c2[t]*h1[t]*r0[t]^2 + 
+          30*\[Alpha]*h1[t]^2*r0[t]^2 - 228*\[Alpha]*c2[t]*h12[t]^2*r0[t]^2 - 
+          63*\[Alpha]*h1[t]*h12[t]^2*r0[t]^2 + 8*\[Alpha]*h12[t]^4*r0[t]^2 + 
+          66*\[Alpha]*h12[t]*h32[t]*r0[t]^2 + 3*\[Alpha]*c32[t]^2*r0[t]*
+           (-2 + 2*h1[t]*r0[t] + 33*h12[t]^2*r0[t]) + \[Alpha]*c1[t]^2*
+           (135 + 75*h12[t]^2*r0[t] + 30*h1[t]^2*r0[t]^2 + 
+            8*h12[t]^4*r0[t]^2 + 66*h12[t]*h32[t]*r0[t]^2 - 
+            9*h1[t]*r0[t]*(2 + 7*h12[t]^2*r0[t])) - 72*\[Beta]*r0[t]^2*
+           R0[t] - 48*\[Beta]*c2[t]*r0[t]^3*R0[t] + 48*\[Beta]*h1[t]*r0[t]^3*
+           R0[t] + 24*\[Beta]*h12[t]^2*r0[t]^3*R0[t] + 24*\[Beta]*r0[t]^4*
+           R0[t]^2 - 24*\[Alpha]*r0[t]^3*R1[t] - 96*\[Beta]*r0[t]^3*R1[t] + 
+          12*\[Alpha]*h12[t]*r0[t]^3*R12[t] + 24*\[Beta]*h12[t]*r0[t]^3*
+           R12[t] - 2*c1[t]*(87*\[Alpha] + 75*\[Alpha]*h12[t]^2*r0[t] + 
+            30*\[Alpha]*h1[t]^2*r0[t]^2 - 114*\[Alpha]*c2[t]*h12[t]^2*
+             r0[t]^2 + 8*\[Alpha]*h12[t]^4*r0[t]^2 + 66*\[Alpha]*h12[t]*
+             h32[t]*r0[t]^2 + \[Alpha]*c32[t]*r0[t]*(63*h12[t] + 
+              55*h12[t]^3*r0[t] - 84*h32[t]*r0[t]) - 36*\[Beta]*r0[t]^2*
+             R0[t] + 12*\[Beta]*h12[t]^2*r0[t]^3*R0[t] + 3*h1[t]*r0[t]*
+             (-6*\[Alpha] + 2*\[Alpha]*c2[t]*r0[t] - 44*\[Alpha]*c32[t]*h12[
+                t]*r0[t] - 21*\[Alpha]*h12[t]^2*r0[t] + 8*\[Beta]*r0[t]^2*R0[
+                t]) - 12*\[Alpha]*r0[t]^3*R1[t] - 48*\[Beta]*r0[t]^3*R1[t] + 
+            6*\[Alpha]*h12[t]*r0[t]^3*R12[t] + 12*\[Beta]*h12[t]*r0[t]^3*
+             R12[t]) - 2*c32[t]*r0[t]*(-55*\[Alpha]*h12[t]^3*r0[t] + 
+            3*h12[t]*(-21*\[Alpha] + 26*\[Alpha]*c2[t]*r0[t] + 
+              44*\[Alpha]*h1[t]*r0[t] + 4*\[Beta]*r0[t]^2*R0[t]) - 
+            12*r0[t]*(-7*\[Alpha]*h32[t] + \[Beta]*r0[t]*R12[t])))*
+         \[Xi][t]^2 + 2*r0[t]*\[Xi][t]^(3/2)*(-26*\[Alpha]*h12[t]^3*r0[t]^2*
+           Derivative[1][c1][t] + 42*\[Alpha]*h32[t]*r0[t]^2*
+           Derivative[1][c1][t] - 10*\[Alpha]*h12[t]^4*r0[t]^2*
+           Derivative[1][c12][t] - 6*\[Alpha]*(-12 + 9*h1[t]*r0[t] + 
+            5*h1[t]^2*r0[t]^2)*Derivative[1][c12][t] + 3*\[Alpha]*h12[t]^2*
+           r0[t]*((2 + 20*h1[t]*r0[t])*Derivative[1][c12][t] + 
+            17*r0[t]*Derivative[1][c32][t]) + 3*\[Alpha]*h12[t]*r0[t]*
+           (4*(1 + 5*h1[t]*r0[t])*Derivative[1][c1][t] + 
+            r0[t]*(-14*h32[t]*Derivative[1][c12][t] - 12*Derivative[1][c2][
+                t] + Derivative[1][h1][t] - c1[t]*Derivative[1][h1][t] + 
+              6*c32[t]*Derivative[1][h12][t] + 2*r0[t]*Derivative[1][R0][
+                t])) - 3*r0[t]*(-(\[Alpha]*(7 + 5*h1[t]*r0[t])*
+              Derivative[1][c32][t]) - 9*\[Alpha]*c32[t]*r0[t]*
+             Derivative[1][h1][t] + 11*\[Alpha]*Derivative[1][h12][t] - 
+            11*\[Alpha]*c1[t]*Derivative[1][h12][t] + 2*\[Alpha]*c2[t]*r0[t]*
+             Derivative[1][h12][t] - \[Alpha]*h1[t]*r0[t]*Derivative[1][h12][
+              t] + \[Alpha]*c1[t]*h1[t]*r0[t]*Derivative[1][h12][t] + 
+            4*\[Beta]*r0[t]^2*R0[t]*Derivative[1][h12][t] + 
+            12*\[Alpha]*r0[t]*Derivative[1][h32][t] - 12*\[Alpha]*c1[t]*r0[t]*
+             Derivative[1][h32][t] + 6*\[Alpha]*r0[t]^2*Derivative[1][R12][
+              t] + 4*\[Beta]*r0[t]^2*Derivative[1][R12][t])) + 
+        3*\[Alpha]*r0[t]^4*(-2*Derivative[1][h1][t] + 
+          5*h12[t]*Derivative[1][h12][t])*Derivative[1][xi][t] - 
+        3*\[Alpha]*r0[t]^4*\[Xi][t]*(9*Derivative[1][h12][t]^2 - 
+          4*Derivative[2][h1][t] + 10*h12[t]*Derivative[2][h12][t])) + 
+      60*c12[t]^3*r0[t]^2*\[Xi][t]^(3/2)*(18*\[Alpha]*c32[t]^3*r0[t]*
+         \[Xi][t]^2 - 354*\[Alpha]*(-1 + c1[t])*c32[t]^2*h12[t]*r0[t]*
+         \[Xi][t]^2 - \[Alpha]*(-1 + c1[t])*h12[t]^3*r0[t]*\[Xi][t]^(3/2)*
+         (55*(-1 + c1[t])^2*Sqrt[\[Xi][t]] - 108*r0[t]*Derivative[1][c12][
+            t]) - 3*c32[t]*((-1 + c1[t])*(34*\[Alpha] - 52*\[Alpha]*c2[t]*
+             r0[t] - 56*\[Alpha]*h1[t]*r0[t] + 123*\[Alpha]*h12[t]^2*r0[t] + 
+            \[Alpha]*c1[t]*(-34 + 56*h1[t]*r0[t] - 123*h12[t]^2*r0[t]) + 
+            16*\[Beta]*r0[t]^2*R0[t])*\[Xi][t]^2 + 2*\[Alpha]*r0[t]*
+           \[Xi][t]^(3/2)*(38*h12[t]*r0[t]*Derivative[1][c1][t] + 
+            27*h12[t]^2*r0[t]*Derivative[1][c12][t] - (19 + 7*h1[t]*r0[t])*
+             Derivative[1][c12][t] - 15*r0[t]*(Derivative[1][c32][t] - 
+              (-1 + c1[t])*Derivative[1][h12][t]))) + 
+        3*h12[t]*((-1 + c1[t])^2*(33*\[Alpha] - 130*\[Alpha]*c2[t]*r0[t] - 
+            46*\[Alpha]*h1[t]*r0[t] + \[Alpha]*c1[t]*(-33 + 46*h1[t]*r0[t]) + 
+            4*\[Beta]*r0[t]^2*R0[t])*\[Xi][t]^2 + 2*r0[t]*\[Xi][t]^(3/2)*
+           ((-3*\[Alpha] + 14*\[Alpha]*c2[t]*r0[t] + 45*\[Alpha]*h1[t]*r0[
+                t] + c1[t]*(3*\[Alpha] - 45*\[Alpha]*h1[t]*r0[t]) - 
+              4*\[Beta]*r0[t]^2*R0[t])*Derivative[1][c12][t] + 
+            \[Alpha]*(-1 + c1[t])*r0[t]*(-47*Derivative[1][c32][t] + 
+              8*(-1 + c1[t])*Derivative[1][h12][t])) + 11*\[Alpha]*r0[t]^3*
+           Derivative[1][c1][t]*Derivative[1][xi][t] - 2*\[Alpha]*r0[t]^3*
+           \[Xi][t]*(14*Derivative[1][c12][t]*Derivative[1][h12][t] + 
+            11*Derivative[2][c1][t])) - 3*\[Alpha]*h12[t]^2*r0[t]^2*
+         (-82*(-1 + c1[t])*\[Xi][t]^(3/2)*Derivative[1][c1][t] - 
+          13*r0[t]*Derivative[1][c12][t]*Derivative[1][xi][t] + 
+          26*r0[t]*\[Xi][t]*Derivative[2][c12][t]) + 
+        3*r0[t]*(4*\[Alpha]*(-1 + c1[t])^3*h32[t]*\[Xi][t]^2 - 
+          12*\[Alpha]*(-1 + c1[t])*\[Xi][t]^(3/2)*Derivative[1][c1][t] + 
+          r0[t]*(4*\[Beta]*(-1 + c1[t])^2*R12[t]*\[Xi][t]^2 + 
+            \[Alpha]*(20*c2[t]*\[Xi][t]^(3/2)*Derivative[1][c1][t] - 
+              36*(-1 + c1[t])*h1[t]*\[Xi][t]^(3/2)*Derivative[1][c1][t] - 
+              48*\[Xi][t]^(3/2)*Derivative[1][c2][t] + 48*c1[t]*\[Xi][t]^
+                (3/2)*Derivative[1][c2][t] + \[Xi][t]^(3/2)*Derivative[1][h1][
+                t] - 2*c1[t]*\[Xi][t]^(3/2)*Derivative[1][h1][t] + 
+              c1[t]^2*\[Xi][t]^(3/2)*Derivative[1][h1][t] - 
+              10*Derivative[1][c12][t]*Derivative[1][xi][t] + 
+              20*\[Xi][t]*Derivative[2][c12][t])) - 
+          r0[t]^2*(8*\[Beta]*R0[t]*\[Xi][t]^(3/2)*Derivative[1][c1][t] + 
+            4*(\[Alpha] + 2*\[Beta])*R12[t]*\[Xi][t]^(3/2)*Derivative[1][c12][
+              t] - 8*\[Alpha]*\[Xi][t]*Derivative[1][c12][t]*
+             Derivative[1][h1][t] + 14*\[Alpha]*\[Xi][t]*Derivative[1][c1][t]*
+             Derivative[1][h12][t] + 8*\[Beta]*\[Xi][t]^(3/2)*
+             Derivative[1][R0][t] - 8*\[Beta]*c1[t]*\[Xi][t]^(3/2)*
+             Derivative[1][R0][t] + 6*\[Alpha]*h1[t]*Derivative[1][c12][t]*
+             Derivative[1][xi][t] + 6*\[Alpha]*Derivative[1][c32][t]*
+             Derivative[1][xi][t] - \[Alpha]*Derivative[1][h12][t]*
+             Derivative[1][xi][t] + \[Alpha]*c1[t]*Derivative[1][h12][t]*
+             Derivative[1][xi][t] - 12*\[Alpha]*h1[t]*\[Xi][t]*
+             Derivative[2][c12][t] - 12*\[Alpha]*\[Xi][t]*Derivative[2][c32][
+              t] + 2*\[Alpha]*\[Xi][t]*Derivative[2][h12][t] - 
+            2*\[Alpha]*c1[t]*\[Xi][t]*Derivative[2][h12][t]))) - 
+      45*c12[t]^2*r0[t]^2*((-1 + c1[t])^2*(-76*\[Alpha] + 
+          296*\[Alpha]*c2[t]*r0[t] - 356*\[Alpha]*c32[t]^2*r0[t] + 
+          108*\[Alpha]*h1[t]*r0[t] - 792*\[Alpha]*c32[t]*h12[t]*r0[t] - 
+          179*\[Alpha]*h12[t]^2*r0[t] + \[Alpha]*c1[t]^2*
+           (-76 + 108*h1[t]*r0[t] - 179*h12[t]^2*r0[t]) - 
+          32*\[Beta]*r0[t]^2*R0[t] + c1[t]*(152*\[Alpha] - 296*\[Alpha]*c2[t]*
+             r0[t] - 216*\[Alpha]*h1[t]*r0[t] + 792*\[Alpha]*c32[t]*h12[t]*
+             r0[t] + 358*\[Alpha]*h12[t]^2*r0[t] + 32*\[Beta]*r0[t]^2*R0[t]))*
+         \[Xi][t]^(7/2) + 4*r0[t]*\[Xi][t]^3*(22*\[Alpha]*c32[t]^2*r0[t]*
+           Derivative[1][c12][t] - 4*\[Alpha]*(-1 + c1[t])*c32[t]*r0[t]*
+           (31*Derivative[1][c1][t] + 48*h12[t]*Derivative[1][c12][t]) + 
+          (-1 + c1[t])*(162*\[Alpha]*(-1 + c1[t])*h12[t]*r0[t]*
+             Derivative[1][c1][t] + 110*\[Alpha]*(-1 + c1[t])*h12[t]^2*r0[t]*
+             Derivative[1][c12][t] - 2*(-8*\[Alpha] - 24*\[Alpha]*c2[t]*r0[
+                t] - 31*\[Alpha]*h1[t]*r0[t] + \[Alpha]*c1[t]*(8 + 
+                31*h1[t]*r0[t]) + 8*\[Beta]*r0[t]^2*R0[t])*Derivative[1][c12][
+              t] + \[Alpha]*(-1 + c1[t])*r0[t]*(-83*Derivative[1][c32][t] + 
+              19*(-1 + c1[t])*Derivative[1][h12][t]))) + 
+        4*\[Alpha]*r0[t]^3*\[Xi][t]^(3/2)*(17*(-1 + c1[t])*
+           Derivative[1][c1][t] + (-12*c32[t] + 31*(-1 + c1[t])*h12[t])*
+           Derivative[1][c12][t])*Derivative[1][xi][t] + 
+        32*\[Alpha]*r0[t]^4*Derivative[1][c12][t]*Derivative[1][xi][t]^2 - 
+        4*\[Alpha]*r0[t]^2*\[Xi][t]^(5/2)*(-40*Derivative[1][c12][t]^2 + 
+          r0[t]*(23*Derivative[1][c1][t]^2 + 72*h12[t]*Derivative[1][c1][t]*
+             Derivative[1][c12][t] - 16*h1[t]*Derivative[1][c12][t]^2 + 
+            41*h12[t]^2*Derivative[1][c12][t]^2 - 32*Derivative[1][c12][t]*
+             Derivative[1][c32][t] - 38*Derivative[1][c12][t]*
+             Derivative[1][h12][t] + 38*c1[t]*Derivative[1][c12][t]*
+             Derivative[1][h12][t] - 34*Derivative[2][c1][t] + 
+            34*c1[t]*Derivative[2][c1][t] - 24*c32[t]*Derivative[2][c12][t] - 
+            62*h12[t]*Derivative[2][c12][t] + 62*c1[t]*h12[t]*
+             Derivative[2][c12][t])) - 16*\[Alpha]*r0[t]^4*\[Xi][t]*
+         (3*Derivative[1][xi][t]*Derivative[2][c12][t] + 
+          Derivative[1][c12][t]*Derivative[2][xi][t]) + 
+        32*\[Alpha]*r0[t]^4*\[Xi][t]^2*Derivative[3][c12][t]))/
+     (2880*c12[t]^3*r0[t]^6*\[Xi][t]^(5/2))
+ 
+OE12 = (2*\[Alpha]*c12[t]^3*(h12[t]^3*r0[t] - 12*h32[t]*r0[t] + 
+        3*h12[t]*(-4 + 5*h1[t]*r0[t]))*Sqrt[\[Xi][t]] - 
+      6*\[Alpha]*(-1 + c1[t])*r0[t]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 
+        2*r0[t]*Derivative[1][c12][t]) + 6*c12[t]^2*
+       ((5*\[Alpha] + 4*\[Alpha]*c2[t]*r0[t] - 2*\[Alpha]*h1[t]*r0[t] - 
+          \[Alpha]*c32[t]*h12[t]*r0[t] + 2*\[Alpha]*h12[t]^2*r0[t] + 
+          \[Alpha]*c1[t]*(-9 + 2*h1[t]*r0[t] - 2*h12[t]^2*r0[t]) - 
+          4*\[Beta]*r0[t]^2*R0[t] - 2*\[Alpha]*r0[t]^3*R1[t] - 
+          4*\[Beta]*r0[t]^3*R1[t] + \[Alpha]*h12[t]*r0[t]^3*R12[t] + 
+          2*\[Beta]*h12[t]*r0[t]^3*R12[t])*Sqrt[\[Xi][t]] - 
+        2*\[Alpha]*r0[t]^2*Derivative[1][h12][t]) - 
+      3*c12[t]*r0[t]*(4*\[Alpha]*(-1 + c1[t])*c32[t]*Sqrt[\[Xi][t]] - 
+        \[Alpha]*h12[t]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 
+          4*r0[t]*Derivative[1][c12][t]) + 2*(\[Alpha] + 2*\[Beta])*r0[t]^3*
+         Derivative[1][R0][t]))/(24*r0[t]^5)
+ 
+oe0 = (6*\[Alpha]*c12[t]^4*(-4 - 7*h1[t]*r0[t] + 6*h1[t]^2*r0[t]^2 + 
+        9*h12[t]*h32[t]*r0[t]^2)*\[Xi][t]^2 - 12*\[Alpha]*r0[t]^2*\[Xi][t]*
+       ((-1 + c1[t])^4*\[Xi][t] - 3*(-1 + c1[t])^2*r0[t]*Sqrt[\[Xi][t]]*
+         Derivative[1][c12][t] + 2*r0[t]^2*Derivative[1][c12][t]^2) - 
+      c12[t]^3*(2*\[Alpha]*(-1 + c1[t])*h12[t]^3*r0[t]^2*\[Xi][t]^2 + 
+        6*\[Alpha]*c32[t]*r0[t]*(13 + 3*h12[t]^2*r0[t])*\[Xi][t]^2 - 
+        3*(8*\[Alpha]*(-1 + c1[t])*h32[t]*r0[t]^2*\[Xi][t]^2 + 
+          r0[t]^3*\[Xi][t]^(3/2)*((-\[Alpha] - 6*\[Beta] + 2*(\[Alpha] + 
+                2*\[Beta])*h1[t]*r0[t])*R12[t]*Sqrt[\[Xi][t]] - 
+            6*(\[Alpha] + 2*\[Beta])*r0[t]*R32[t]*Sqrt[\[Xi][t]] - 
+            8*\[Alpha]*Derivative[1][h1][t])) - 
+        3*h12[t]*(15*\[Alpha]*(-1 + c1[t])*r0[t]*\[Xi][t]^2 - 
+          22*\[Alpha]*(-1 + c1[t])*h1[t]*r0[t]^2*\[Xi][t]^2 + 
+          2*(\[Alpha] + 2*\[Beta])*r0[t]^4*R1[t]*\[Xi][t]^2 + 
+          6*\[Alpha]*r0[t]^3*\[Xi][t]^(3/2)*Derivative[1][h12][t])) + 
+      3*c12[t]^2*r0[t]*\[Xi][t]^(3/2)*(\[Alpha]*c1[t]^2*(8 + 2*h1[t]*r0[t] + 
+          h12[t]^2*r0[t])*Sqrt[\[Xi][t]] - c1[t]*(8*\[Alpha] + 
+          14*\[Alpha]*c2[t]*r0[t] + 4*\[Alpha]*h1[t]*r0[t] - 
+          14*\[Alpha]*c32[t]*h12[t]*r0[t] + 2*\[Alpha]*h12[t]^2*r0[t] - 
+          8*\[Beta]*r0[t]^2*R0[t] - 2*\[Alpha]*r0[t]^3*R1[t] - 
+          4*\[Beta]*r0[t]^3*R1[t] + \[Alpha]*h12[t]*r0[t]^3*R12[t] + 
+          2*\[Beta]*h12[t]*r0[t]^3*R12[t])*Sqrt[\[Xi][t]] + 
+        5*\[Alpha]*c1[t]*r0[t]^2*Derivative[1][h12][t] + 
+        r0[t]*(14*\[Alpha]*c2[t]*Sqrt[\[Xi][t]] - 6*\[Alpha]*c32[t]^2*
+           Sqrt[\[Xi][t]] + 2*\[Alpha]*h1[t]*Sqrt[\[Xi][t]] - 
+          14*\[Alpha]*c32[t]*h12[t]*Sqrt[\[Xi][t]] + \[Alpha]*h12[t]^2*
+           Sqrt[\[Xi][t]] - 8*\[Beta]*r0[t]*R0[t]*Sqrt[\[Xi][t]] - 
+          2*\[Alpha]*r0[t]^2*R1[t]*Sqrt[\[Xi][t]] - 4*\[Beta]*r0[t]^2*R1[t]*
+           Sqrt[\[Xi][t]] + \[Alpha]*h12[t]*r0[t]^2*R12[t]*Sqrt[\[Xi][t]] + 
+          2*\[Beta]*h12[t]*r0[t]^2*R12[t]*Sqrt[\[Xi][t]] + 
+          7*\[Alpha]*h12[t]*r0[t]*Derivative[1][c1][t] + 
+          16*\[Alpha]*Derivative[1][c12][t] - 12*\[Alpha]*h1[t]*r0[t]*
+           Derivative[1][c12][t] + 6*\[Alpha]*h12[t]^2*r0[t]*
+           Derivative[1][c12][t] - 5*\[Alpha]*r0[t]*Derivative[1][h12][t] + 
+          2*\[Alpha]*h12[t]*r0[t]^3*Derivative[1][R0][t] + 
+          4*\[Beta]*h12[t]*r0[t]^3*Derivative[1][R0][t] - 
+          3*\[Alpha]*r0[t]^3*Derivative[1][R12][t] - 6*\[Beta]*r0[t]^3*
+           Derivative[1][R12][t])) - 3*c12[t]*r0[t]^2*
+       (-(\[Alpha]*(-1 + c1[t])*h12[t]*\[Xi][t]^(3/2)*
+          (5*(-1 + c1[t])^2*Sqrt[\[Xi][t]] - 9*r0[t]*Derivative[1][c12][
+             t])) + 2*c32[t]*(7*\[Alpha]*(-1 + c1[t])^2*\[Xi][t]^2 - 
+          6*\[Alpha]*r0[t]*\[Xi][t]^(3/2)*Derivative[1][c12][t]) + 
+        r0[t]*(\[Xi][t]^(3/2)*(10*\[Alpha]*(-1 + c1[t])*Derivative[1][c1][
+              t] + (\[Alpha] + 2*\[Beta])*r0[t]^2*R12[t]*Derivative[1][c12][
+              t]) + 2*\[Alpha]*r0[t]*Derivative[1][c12][t]*
+           Derivative[1][xi][t] - 4*\[Alpha]*r0[t]*\[Xi][t]*
+           Derivative[2][c12][t])))/(12*c12[t]*r0[t]^6*\[Xi][t]^(3/2))
+ 
+o0 = (2*\[Alpha]*c12[t]^3*(h12[t]^3*r0[t] - 12*h32[t]*r0[t] + 
+        3*h12[t]*(-4 + 5*h1[t]*r0[t]))*Sqrt[\[Xi][t]] - 
+      6*\[Alpha]*(-1 + c1[t])*r0[t]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 
+        2*r0[t]*Derivative[1][c12][t]) + 6*c12[t]^2*
+       ((5*\[Alpha] + 4*\[Alpha]*c2[t]*r0[t] - 2*\[Alpha]*h1[t]*r0[t] - 
+          \[Alpha]*c32[t]*h12[t]*r0[t] + 2*\[Alpha]*h12[t]^2*r0[t] + 
+          \[Alpha]*c1[t]*(-9 + 2*h1[t]*r0[t] - 2*h12[t]^2*r0[t]) - 
+          4*\[Beta]*r0[t]^2*R0[t] - 2*\[Alpha]*r0[t]^3*R1[t] - 
+          4*\[Beta]*r0[t]^3*R1[t] + \[Alpha]*h12[t]*r0[t]^3*R12[t] + 
+          2*\[Beta]*h12[t]*r0[t]^3*R12[t])*Sqrt[\[Xi][t]] - 
+        2*\[Alpha]*r0[t]^2*Derivative[1][h12][t]) - 
+      3*c12[t]*r0[t]*(4*\[Alpha]*(-1 + c1[t])*c32[t]*Sqrt[\[Xi][t]] - 
+        \[Alpha]*h12[t]*((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 
+          4*r0[t]*Derivative[1][c12][t]) + 2*(\[Alpha] + 2*\[Beta])*r0[t]^3*
+         Derivative[1][R0][t]))/(24*r0[t]^5*Sqrt[\[Xi][t]])
+ 
+o12 = (-4*\[Alpha]*c12[t]^6*(-1350*h12[t]^2*r0[t] - 30*h12[t]^4*r0[t]^2 - 
+        6120*h12[t]*h32[t]*r0[t]^2 + 360*h1[t]^3*r0[t]^3 - 
+        17*h12[t]^6*r0[t]^3 - 240*h12[t]^3*h32[t]*r0[t]^3 - 
+        45*h1[t]^2*r0[t]^2*(76 + 13*h12[t]^2*r0[t]) + 
+        30*h1[t]*r0[t]*(102 + 51*h12[t]^2*r0[t] + h12[t]^4*r0[t]^2 + 
+          78*h12[t]*h32[t]*r0[t]^2) - 180*(-6 + h32[t]^2*r0[t]^3))*
+       \[Xi][t]^(7/2) - 360*\[Alpha]*r0[t]^3*\[Xi][t]^2*
+       (13*(-1 + c1[t])^2*Sqrt[\[Xi][t]] - 6*r0[t]*Derivative[1][c12][t])*
+       ((-1 + c1[t])^2*Sqrt[\[Xi][t]] - 2*r0[t]*Derivative[1][c12][t])^2 - 
+      24*c12[t]^5*r0[t]*\[Xi][t]^3*(7*\[Alpha]*(-1 + c1[t])*h12[t]^5*r0[t]^2*
+         Sqrt[\[Xi][t]] + 5*\[Alpha]*c32[t]*(198 + 69*h12[t]^2*r0[t] - 
+          24*h1[t]^2*r0[t]^2 + 7*h12[t]^4*r0[t]^2 - 66*h12[t]*h32[t]*
+           r0[t]^2 + 3*h1[t]*r0[t]*(12 - 13*h12[t]^2*r0[t]))*Sqrt[\[Xi][t]] + 
+        15*h12[t]^2*r0[t]^2*(-8*\[Alpha]*(-1 + c1[t])*h32[t]*Sqrt[\[Xi][t]] + 
+          r0[t]*(2*(\[Alpha] + 2*\[Beta])*R12[t]*Sqrt[\[Xi][t]] + 
+            7*\[Alpha]*Derivative[1][h1][t])) - 5*h12[t]^3*r0[t]*
+         ((-7*\[Alpha] + 28*\[Alpha]*c2[t]*r0[t] + 7*\[Alpha]*h1[t]*r0[t] - 
+            7*\[Alpha]*c1[t]*(-1 + h1[t]*r0[t]) - 4*\[Beta]*r0[t]^2*R0[t])*
+           Sqrt[\[Xi][t]] + 8*\[Alpha]*r0[t]^2*Derivative[1][h12][t]) - 
+        15*r0[t]*(r0[t]*(2*(\[Alpha] + 2*(\[Alpha] + 3*\[Beta])*h1[t]*r0[t])*
+             R12[t]*Sqrt[\[Xi][t]] - 21*\[Alpha]*Derivative[1][h1][t] + 
+            r0[t]*(-12*(\[Alpha] + 2*\[Beta])*R32[t]*Sqrt[\[Xi][t]] + 
+              17*\[Alpha]*h1[t]*Derivative[1][h1][t])) + 
+          2*h32[t]*((5*\[Alpha] - 2*\[Alpha]*c2[t]*r0[t] - 14*\[Alpha]*h1[
+                t]*r0[t] + \[Alpha]*c1[t]*(-5 + 14*h1[t]*r0[t]) - 
+              4*\[Beta]*r0[t]^2*R0[t])*Sqrt[\[Xi][t]] + 5*\[Alpha]*r0[t]^2*
+             Derivative[1][h12][t])) - 15*h12[t]*
+         ((-38*\[Alpha] + 59*\[Alpha]*h1[t]*r0[t] - 4*\[Alpha]*h1[t]^2*
+             r0[t]^2 + 2*\[Alpha]*c2[t]*r0[t]*(2 + h1[t]*r0[t]) + 
+            \[Alpha]*c1[t]*(46 - 59*h1[t]*r0[t] + 4*h1[t]^2*r0[t]^2) + 
+            8*\[Beta]*r0[t]^2*R0[t] - 12*\[Beta]*h1[t]*r0[t]^3*R0[t] + 
+            8*\[Alpha]*r0[t]^3*R1[t] + 24*\[Beta]*r0[t]^3*R1[t])*
+           Sqrt[\[Xi][t]] + 2*\[Alpha]*r0[t]^2*((11 - 6*h1[t]*r0[t])*
+             Derivative[1][h12][t] + 6*r0[t]*Derivative[1][h32][t]))) - 
+      180*\[Alpha]*c12[t]*r0[t]^3*\[Xi][t]*
+       (c32[t]*\[Xi][t]^(3/2)*(107*(-1 + c1[t])^4*\[Xi][t] - 
+          193*(-1 + c1[t])^2*r0[t]*Sqrt[\[Xi][t]]*Derivative[1][c12][t] + 
+          48*r0[t]^2*Derivative[1][c12][t]^2) - (-1 + c1[t])*h12[t]*
+         \[Xi][t]^(3/2)*(56*(-1 + c1[t])^4*\[Xi][t] - 179*(-1 + c1[t])^2*
+           r0[t]*Sqrt[\[Xi][t]]*Derivative[1][c12][t] + 
+          134*r0[t]^2*Derivative[1][c12][t]^2) + 
+        r0[t]*(118*(-1 + c1[t])^3*\[Xi][t]^2*Derivative[1][c1][t] + 
+          27*(-1 + c1[t])^2*r0[t]*Sqrt[\[Xi][t]]*Derivative[1][c12][t]*
+           Derivative[1][xi][t] - 24*r0[t]^2*Derivative[1][c12][t]^2*
+           Derivative[1][xi][t] + 48*r0[t]^2*\[Xi][t]*Derivative[1][c12][t]*
+           Derivative[2][c12][t] - 2*(-1 + c1[t])*r0[t]*\[Xi][t]^(3/2)*
+           (73*Derivative[1][c1][t]*Derivative[1][c12][t] + 
+            27*(-1 + c1[t])*Derivative[2][c12][t]))) - 
+      60*c12[t]^4*r0[t]*\[Xi][t]^(3/2)*
+       ((87*\[Alpha] + 138*\[Alpha]*c32[t]^2*r0[t] - 66*\[Alpha]*h1[t]*
+           r0[t] + 462*\[Alpha]*c32[t]*h12[t]*r0[t] + 51*\[Alpha]*h12[t]^2*
+           r0[t] - 12*\[Alpha]*c2[t]^2*r0[t]^2 + 6*\[Alpha]*c32[t]^2*h1[t]*
+           r0[t]^2 + 30*\[Alpha]*h1[t]^2*r0[t]^2 - 264*\[Alpha]*c32[t]*h1[t]*
+           h12[t]*r0[t]^2 + 99*\[Alpha]*c32[t]^2*h12[t]^2*r0[t]^2 - 
+          63*\[Alpha]*h1[t]*h12[t]^2*r0[t]^2 + 110*\[Alpha]*c32[t]*h12[t]^3*
+           r0[t]^2 + 8*\[Alpha]*h12[t]^4*r0[t]^2 - 168*\[Alpha]*c32[t]*h32[t]*
+           r0[t]^2 + 66*\[Alpha]*h12[t]*h32[t]*r0[t]^2 + 
+          \[Alpha]*c1[t]^2*(-57 + 51*h12[t]^2*r0[t] + 30*h1[t]^2*r0[t]^2 + 
+            8*h12[t]^4*r0[t]^2 + 66*h12[t]*h32[t]*r0[t]^2 - 
+            3*h1[t]*r0[t]*(22 + 21*h12[t]^2*r0[t])) + 120*\[Beta]*r0[t]^2*
+           R0[t] + 48*\[Beta]*h1[t]*r0[t]^3*R0[t] - 24*\[Beta]*c32[t]*h12[t]*
+           r0[t]^3*R0[t] + 24*\[Beta]*h12[t]^2*r0[t]^3*R0[t] + 
+          24*\[Beta]*r0[t]^4*R0[t]^2 - 12*c2[t]*r0[t]*(28*\[Alpha] - 
+            \[Alpha]*h1[t]*r0[t] + 13*\[Alpha]*c32[t]*h12[t]*r0[t] + 
+            19*\[Alpha]*h12[t]^2*r0[t] + 4*\[Beta]*r0[t]^2*R0[t]) + 
+          24*\[Alpha]*r0[t]^3*R1[t] + 24*\[Beta]*c32[t]*r0[t]^3*R12[t] - 
+          12*\[Alpha]*h12[t]*r0[t]^3*R12[t] - 24*\[Beta]*h12[t]*r0[t]^3*
+           R12[t] - 2*c1[t]*(-9*\[Alpha] + 231*\[Alpha]*c32[t]*h12[t]*r0[t] + 
+            51*\[Alpha]*h12[t]^2*r0[t] + 30*\[Alpha]*h1[t]^2*r0[t]^2 + 
+            55*\[Alpha]*c32[t]*h12[t]^3*r0[t]^2 + 8*\[Alpha]*h12[t]^4*
+             r0[t]^2 - 84*\[Alpha]*c32[t]*h32[t]*r0[t]^2 + 66*\[Alpha]*h12[t]*
+             h32[t]*r0[t]^2 + 6*\[Alpha]*c2[t]*r0[t]*(-28 + h1[t]*r0[t] - 
+              19*h12[t]^2*r0[t]) + 60*\[Beta]*r0[t]^2*R0[t] + 
+            12*\[Beta]*h12[t]^2*r0[t]^3*R0[t] - 3*h1[t]*r0[t]*
+             (22*\[Alpha] + 44*\[Alpha]*c32[t]*h12[t]*r0[t] + 
+              21*\[Alpha]*h12[t]^2*r0[t] - 8*\[Beta]*r0[t]^2*R0[t]) + 
+            12*\[Alpha]*r0[t]^3*R1[t] - 6*\[Alpha]*h12[t]*r0[t]^3*R12[t] - 
+            12*\[Beta]*h12[t]*r0[t]^3*R12[t]))*\[Xi][t]^2 - 
+        2*r0[t]*\[Xi][t]^(3/2)*(26*\[Alpha]*h12[t]^3*r0[t]^2*
+           Derivative[1][c1][t] - 42*\[Alpha]*h32[t]*r0[t]^2*
+           Derivative[1][c1][t] + 10*\[Alpha]*h12[t]^4*r0[t]^2*
+           Derivative[1][c12][t] + 30*\[Alpha]*(4 - 3*h1[t]*r0[t] + 
+            h1[t]^2*r0[t]^2)*Derivative[1][c12][t] - 3*\[Alpha]*h12[t]^2*
+           r0[t]*((-22 + 20*h1[t]*r0[t])*Derivative[1][c12][t] + 
+            17*r0[t]*Derivative[1][c32][t]) + 3*h12[t]*r0[t]*
+           (-4*\[Alpha]*(-6 + 5*h1[t]*r0[t])*Derivative[1][c1][t] + 
+            r0[t]*(14*\[Alpha]*h32[t]*Derivative[1][c12][t] + 
+              12*\[Alpha]*Derivative[1][c2][t] - \[Alpha]*Derivative[1][h1][
+                t] + \[Alpha]*c1[t]*Derivative[1][h1][t] - 6*\[Alpha]*c32[
+                t]*Derivative[1][h12][t] + 6*\[Alpha]*r0[t]*Derivative[1][R0][
+                t] + 16*\[Beta]*r0[t]*Derivative[1][R0][t])) - 
+          3*r0[t]*(\[Alpha]*(7 + 5*h1[t]*r0[t])*Derivative[1][c32][t] + 
+            9*\[Alpha]*c32[t]*r0[t]*Derivative[1][h1][t] + 
+            9*\[Alpha]*Derivative[1][h12][t] - 9*\[Alpha]*c1[t]*
+             Derivative[1][h12][t] - 2*\[Alpha]*c2[t]*r0[t]*
+             Derivative[1][h12][t] + \[Alpha]*h1[t]*r0[t]*Derivative[1][h12][
+              t] - \[Alpha]*c1[t]*h1[t]*r0[t]*Derivative[1][h12][t] - 
+            4*\[Beta]*r0[t]^2*R0[t]*Derivative[1][h12][t] - 
+            12*\[Alpha]*r0[t]*Derivative[1][h32][t] + 12*\[Alpha]*c1[t]*r0[t]*
+             Derivative[1][h32][t] + 6*\[Alpha]*r0[t]^2*Derivative[1][R12][
+              t] + 20*\[Beta]*r0[t]^2*Derivative[1][R12][t])) + 
+        3*\[Alpha]*r0[t]^4*(-2*Derivative[1][h1][t] + 
+          5*h12[t]*Derivative[1][h12][t])*Derivative[1][xi][t] - 
+        3*\[Alpha]*r0[t]^4*\[Xi][t]*(9*Derivative[1][h12][t]^2 - 
+          4*Derivative[2][h1][t] + 10*h12[t]*Derivative[2][h12][t])) - 
+      60*c12[t]^3*r0[t]^2*\[Xi][t]^(3/2)*(18*\[Alpha]*c32[t]^3*r0[t]*
+         \[Xi][t]^2 - 354*\[Alpha]*(-1 + c1[t])*c32[t]^2*h12[t]*r0[t]*
+         \[Xi][t]^2 - \[Alpha]*(-1 + c1[t])*h12[t]^3*r0[t]*\[Xi][t]^(3/2)*
+         (55*(-1 + c1[t])^2*Sqrt[\[Xi][t]] - 108*r0[t]*Derivative[1][c12][
+            t]) - 3*c32[t]*((-1 + c1[t])*(146*\[Alpha] - 52*\[Alpha]*c2[t]*
+             r0[t] - 56*\[Alpha]*h1[t]*r0[t] + 123*\[Alpha]*h12[t]^2*r0[t] + 
+            \[Alpha]*c1[t]*(-146 + 56*h1[t]*r0[t] - 123*h12[t]^2*r0[t]) + 
+            16*\[Beta]*r0[t]^2*R0[t])*\[Xi][t]^2 + 2*\[Alpha]*r0[t]*
+           \[Xi][t]^(3/2)*(38*h12[t]*r0[t]*Derivative[1][c1][t] + 
+            27*h12[t]^2*r0[t]*Derivative[1][c12][t] + (29 - 7*h1[t]*r0[t])*
+             Derivative[1][c12][t] - 15*r0[t]*(Derivative[1][c32][t] - 
+              (-1 + c1[t])*Derivative[1][h12][t]))) + 
+        3*h12[t]*((-1 + c1[t])^2*(73*\[Alpha] - 130*\[Alpha]*c2[t]*r0[t] - 
+            46*\[Alpha]*h1[t]*r0[t] + \[Alpha]*c1[t]*(-73 + 46*h1[t]*r0[t]) + 
+            4*\[Beta]*r0[t]^2*R0[t])*\[Xi][t]^2 + 2*r0[t]*\[Xi][t]^(3/2)*
+           ((-39*\[Alpha] + 14*\[Alpha]*c2[t]*r0[t] + 45*\[Alpha]*h1[t]*r0[
+                t] + c1[t]*(39*\[Alpha] - 45*\[Alpha]*h1[t]*r0[t]) - 
+              4*\[Beta]*r0[t]^2*R0[t])*Derivative[1][c12][t] + 
+            \[Alpha]*(-1 + c1[t])*r0[t]*(-47*Derivative[1][c32][t] + 
+              8*(-1 + c1[t])*Derivative[1][h12][t])) + 11*\[Alpha]*r0[t]^3*
+           Derivative[1][c1][t]*Derivative[1][xi][t] - 2*\[Alpha]*r0[t]^3*
+           \[Xi][t]*(14*Derivative[1][c12][t]*Derivative[1][h12][t] + 
+            11*Derivative[2][c1][t])) - 3*\[Alpha]*h12[t]^2*r0[t]^2*
+         (-82*(-1 + c1[t])*\[Xi][t]^(3/2)*Derivative[1][c1][t] - 
+          13*r0[t]*Derivative[1][c12][t]*Derivative[1][xi][t] + 
+          26*r0[t]*\[Xi][t]*Derivative[2][c12][t]) + 
+        3*r0[t]*(4*\[Alpha]*(-1 + c1[t])^3*h32[t]*\[Xi][t]^2 + 
+          68*\[Alpha]*(-1 + c1[t])*\[Xi][t]^(3/2)*Derivative[1][c1][t] + 
+          r0[t]*(4*\[Beta]*(-1 + c1[t])^2*R12[t]*\[Xi][t]^2 + 
+            \[Alpha]*(20*c2[t]*\[Xi][t]^(3/2)*Derivative[1][c1][t] - 
+              36*(-1 + c1[t])*h1[t]*\[Xi][t]^(3/2)*Derivative[1][c1][t] - 
+              48*\[Xi][t]^(3/2)*Derivative[1][c2][t] + 48*c1[t]*\[Xi][t]^
+                (3/2)*Derivative[1][c2][t] + \[Xi][t]^(3/2)*Derivative[1][h1][
+                t] - 2*c1[t]*\[Xi][t]^(3/2)*Derivative[1][h1][t] + 
+              c1[t]^2*\[Xi][t]^(3/2)*Derivative[1][h1][t] + 
+              6*Derivative[1][c12][t]*Derivative[1][xi][t] - 
+              12*\[Xi][t]*Derivative[2][c12][t])) + 
+          r0[t]^2*(-8*\[Beta]*R0[t]*\[Xi][t]^(3/2)*Derivative[1][c1][t] + 
+            4*(\[Alpha] + 2*\[Beta])*R12[t]*\[Xi][t]^(3/2)*Derivative[1][c12][
+              t] + 8*\[Alpha]*\[Xi][t]*Derivative[1][c12][t]*
+             Derivative[1][h1][t] - 14*\[Alpha]*\[Xi][t]*Derivative[1][c1][t]*
+             Derivative[1][h12][t] - 8*\[Beta]*\[Xi][t]^(3/2)*
+             Derivative[1][R0][t] + 8*\[Beta]*c1[t]*\[Xi][t]^(3/2)*
+             Derivative[1][R0][t] - 6*\[Alpha]*h1[t]*Derivative[1][c12][t]*
+             Derivative[1][xi][t] - 6*\[Alpha]*Derivative[1][c32][t]*
+             Derivative[1][xi][t] + \[Alpha]*Derivative[1][h12][t]*
+             Derivative[1][xi][t] - \[Alpha]*c1[t]*Derivative[1][h12][t]*
+             Derivative[1][xi][t] + 12*\[Alpha]*h1[t]*\[Xi][t]*
+             Derivative[2][c12][t] + 12*\[Alpha]*\[Xi][t]*Derivative[2][c32][
+              t] - 2*\[Alpha]*\[Xi][t]*Derivative[2][h12][t] + 
+            2*\[Alpha]*c1[t]*\[Xi][t]*Derivative[2][h12][t]))) + 
+      45*c12[t]^2*r0[t]^2*((-1 + c1[t])^2*(-204*\[Alpha] + 
+          296*\[Alpha]*c2[t]*r0[t] - 356*\[Alpha]*c32[t]^2*r0[t] + 
+          108*\[Alpha]*h1[t]*r0[t] - 792*\[Alpha]*c32[t]*h12[t]*r0[t] - 
+          179*\[Alpha]*h12[t]^2*r0[t] + \[Alpha]*c1[t]^2*
+           (-204 + 108*h1[t]*r0[t] - 179*h12[t]^2*r0[t]) - 
+          32*\[Beta]*r0[t]^2*R0[t] + c1[t]*(408*\[Alpha] - 296*\[Alpha]*c2[t]*
+             r0[t] - 216*\[Alpha]*h1[t]*r0[t] + 792*\[Alpha]*c32[t]*h12[t]*
+             r0[t] + 358*\[Alpha]*h12[t]^2*r0[t] + 32*\[Beta]*r0[t]^2*R0[t]))*
+         \[Xi][t]^(7/2) + 4*r0[t]*\[Xi][t]^3*(22*\[Alpha]*c32[t]^2*r0[t]*
+           Derivative[1][c12][t] - 4*\[Alpha]*(-1 + c1[t])*c32[t]*r0[t]*
+           (31*Derivative[1][c1][t] + 48*h12[t]*Derivative[1][c12][t]) + 
+          (-1 + c1[t])*(162*\[Alpha]*(-1 + c1[t])*h12[t]*r0[t]*
+             Derivative[1][c1][t] + 110*\[Alpha]*(-1 + c1[t])*h12[t]^2*r0[t]*
+             Derivative[1][c12][t] + 2*(-40*\[Alpha] + 24*\[Alpha]*c2[t]*r0[
+                t] + 31*\[Alpha]*h1[t]*r0[t] + \[Alpha]*c1[t]*(40 - 
+                31*h1[t]*r0[t]) - 8*\[Beta]*r0[t]^2*R0[t])*Derivative[1][c12][
+              t] + \[Alpha]*(-1 + c1[t])*r0[t]*(-83*Derivative[1][c32][t] + 
+              19*(-1 + c1[t])*Derivative[1][h12][t]))) + 
+        4*\[Alpha]*r0[t]^3*\[Xi][t]^(3/2)*(17*(-1 + c1[t])*
+           Derivative[1][c1][t] + (-12*c32[t] + 31*(-1 + c1[t])*h12[t])*
+           Derivative[1][c12][t])*Derivative[1][xi][t] + 
+        32*\[Alpha]*r0[t]^4*Derivative[1][c12][t]*Derivative[1][xi][t]^2 - 
+        4*\[Alpha]*r0[t]^2*\[Xi][t]^(5/2)*(24*Derivative[1][c12][t]^2 + 
+          r0[t]*(23*Derivative[1][c1][t]^2 + 72*h12[t]*Derivative[1][c1][t]*
+             Derivative[1][c12][t] - 16*h1[t]*Derivative[1][c12][t]^2 + 
+            41*h12[t]^2*Derivative[1][c12][t]^2 - 32*Derivative[1][c12][t]*
+             Derivative[1][c32][t] - 38*Derivative[1][c12][t]*
+             Derivative[1][h12][t] + 38*c1[t]*Derivative[1][c12][t]*
+             Derivative[1][h12][t] - 34*Derivative[2][c1][t] + 
+            34*c1[t]*Derivative[2][c1][t] - 24*c32[t]*Derivative[2][c12][t] - 
+            62*h12[t]*Derivative[2][c12][t] + 62*c1[t]*h12[t]*
+             Derivative[2][c12][t])) - 16*\[Alpha]*r0[t]^4*\[Xi][t]*
+         (3*Derivative[1][xi][t]*Derivative[2][c12][t] + 
+          Derivative[1][c12][t]*Derivative[2][xi][t]) + 
+        32*\[Alpha]*r0[t]^4*\[Xi][t]^2*Derivative[3][c12][t]))/
+     (2880*c12[t]^3*r0[t]^6*\[Xi][t]^(7/2))
